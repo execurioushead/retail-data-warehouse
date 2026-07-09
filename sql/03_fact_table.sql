@@ -1,0 +1,1 @@
+-- Fact table will be created here.
