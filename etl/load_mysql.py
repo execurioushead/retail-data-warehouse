@@ -10,6 +10,7 @@ import mysql.connector
 import pandas as pd
 
 from config import (
+    PROJECT_ROOT,
     DB_HOST,
     DB_PORT,
     DB_NAME,
@@ -33,7 +34,9 @@ connection = mysql.connector.connect(
     port=DB_PORT,
     user=DB_USER,
     password=DB_PASSWORD,
-    database=DB_NAME
+    database=DB_NAME,
+    ssl_ca=str(PROJECT_ROOT / "ca.pem"),
+    ssl_verify_cert=True
 )
 
 cursor = connection.cursor()

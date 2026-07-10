@@ -39,16 +39,13 @@ SALES_FILE = RAW_DIR / "sales.csv"
 # Database Configuration
 # ==========================================================
 
-DB_HOST = "localhost"
+import os
 
-DB_PORT = 3306
-
-DB_NAME = "RetailDW"
-
-DB_USER = "root"
-
-# Homebrew MySQL on your Mac currently has no password
-DB_PASSWORD = ""
+DB_HOST = os.getenv("DB_HOST", "localhost")
+DB_PORT = int(os.getenv("DB_PORT", "3306"))
+DB_NAME = os.getenv("DB_NAME", "RetailDW")
+DB_USER = os.getenv("DB_USER", "root")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "")
 
 # ==========================================================
 # Data Generation Configuration
